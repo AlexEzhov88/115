@@ -12,7 +12,9 @@ public interface UserDao {
 
     void removeUserById(long id);
 
-    List<User> getAllUsers();
+    default List<User> getAllUsers() {
+        return null;
+    }
 
     void cleanUsersTable();
 }
