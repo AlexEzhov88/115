@@ -7,7 +7,7 @@ import jm.task.core.jdbc.service.UserServiceImpl;
 import java.sql.SQLException;
 
 public class Main {
-
+    private static final UserService userService = new UserServiceImpl();
     private static final User user1 = new User("Sasha", "Ezhov", (byte) 34);
     private static final User user2 = new User("Victor", "Victorov", (byte) 99);
     private static final User user3 = new User("Паша", "М", (byte) 55);
@@ -15,8 +15,6 @@ public class Main {
 
     public static void main(String[] args) throws SQLException {
         // реализуйте алгоритм здесь
-        UserService userService = new UserServiceImpl();
-
         userService.createUsersTable();
 
         userService.saveUser(user1.getName(), user1.getLastName(), user1.getAge());
